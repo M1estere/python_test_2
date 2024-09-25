@@ -1,7 +1,15 @@
+from ingredient import Ingredient
+
+
 class Recipe:
     def __init__(self, name, ingredients):
         self.name = name
         self.ingredients = ingredients
+        
+        self._set_ingredients()
+    
+    def _set_ingredients(self):
+        self.ingredients = [Ingredient(element[0], element[1], element[2], element[3]) for element in self.ingredients]
 
 
     def calc_cost(self, portions=1):
