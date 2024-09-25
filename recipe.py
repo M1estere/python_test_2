@@ -8,6 +8,7 @@ class Recipe:
         
         self._set_ingredients()
     
+    
     def _set_ingredients(self):
         self.ingredients = [Ingredient(element[0], element[1], element[2], element[3]) for element in self.ingredients]
 

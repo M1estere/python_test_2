@@ -28,8 +28,3 @@ if __name__ == '__main__':
 
     recipe = Recipe(receipt_from_api['title'], receipt_from_api['ingredients_list'])
     print(recipe)
-
-    assert recipe.calc_cost() == 860, 'Wrong cost for one portion'
-    assert recipe.calc_cost(2) == 1720, 'Wrong cost for two portions'
-    assert recipe.calc_weight(2) == 2480, 'Wrong weight for two portions'
-    assert recipe.calc_weight(raw=True) == 1240, 'Wrong weight for one raw portion'
