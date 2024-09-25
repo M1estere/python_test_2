@@ -9,8 +9,8 @@ class Recipe:
 
 
     def calc_weight(self, portions=1, raw=True):
-        return sum([element.weight for element in self.ingredients]) * portions
+        return sum([element.raw_weight if raw else element.weight for element in self.ingredients]) * portions
 
 
-    def __str__(self) -> str:
+    def __str__(self):
         return f'Рецепт {self.name} содержит:\n' + '\n'.join([f'- {ingredient.name} - {ingredient.weight}г, {ingredient.price}₽' for ingredient in self.ingredients])
